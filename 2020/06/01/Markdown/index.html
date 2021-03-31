@@ -126,12 +126,12 @@
 </li>
 <li>代码块 : 代码前后各一行用三个反引号( ``` )括起来第一个```后写上代码类型</li>
 </ol>
-<pre class="language-c" data-language="c"><code class="language-c">#include&lt;iostream&gt;
-int main()
-&#123;
-    std::cout&lt;&lt;&quot;hello markdown&quot;;
-    return 0;
-&#125;</code></pre>
+<pre class="language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+    std<span class="token operator">::</span>cout<span class="token operator">&lt;&lt;</span><span class="token string">"hello markdown"</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span></code></pre>
 
 <h3 id="脚注"><a href="#脚注" class="headerlink" title="脚注"></a>脚注</h3><ul>
 <li>待解释[^name]<br>然后[^name]:内容</li>
@@ -141,8 +141,8 @@ int main()
 <blockquote>
 </blockquote>
 </blockquote>
-<h3 id="任务列表"><a href="#任务列表" class="headerlink" title="任务列表"></a>任务列表</h3><pre class="language-c" data-language="c"><code class="language-c">* [x] 内容
-* [] 内容
+<h3 id="任务列表"><a href="#任务列表" class="headerlink" title="任务列表"></a>任务列表</h3><pre class="language-c" data-language="c"><code class="language-c"><span class="token operator">*</span> <span class="token punctuation">[</span>x<span class="token punctuation">]</span> 内容
+<span class="token operator">*</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> 内容
    x表示已完成</code></pre>
 
 <h3 id="锚点"><a href="#锚点" class="headerlink" title="锚点"></a>锚点</h3><ul>
@@ -157,8 +157,8 @@ int main()
 <li><input checked="" disabled="" type="checkbox"> 456</li>
 </ul>
 <pre class="language-markdown" data-language="markdown"><code class="language-markdown">使用带有 [ ] 或 [x] （未完成或已完成）项的列表语法撰写一个待办事宜列表，并且支持子列表嵌套以及混用Markdown语法
-* [ ] 123
-* [x] 456</code></pre>
+<span class="token list punctuation">*</span> [ ] 123
+<span class="token list punctuation">*</span> [x] 456</code></pre>
 
 <h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a><strong>注意</strong></h3><ul>
 <li>换行需要<strong>两个空格加回车</strong></li>

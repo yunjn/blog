@@ -21,7 +21,7 @@
 <p>对不方便使用或对双系统不适应的同学可以在 windows 子系统下完成 robocup3d 环境的搭建，体验还不错。  </p>
 </blockquote>
 <h2 id="wsl的安装"><a href="#wsl的安装" class="headerlink" title="wsl的安装"></a>wsl的安装</h2><p>地址：&lt;<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/2bcf5eca5fbc">https://www.jianshu.com/p/2bcf5eca5fbc</a>&gt;  </p>
-<h2 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h2><pre class="language-bash" data-language="bash"><code class="language-bash">sudo apt install g++ git cmake libfreetype6-dev libode-dev libsdl-dev ruby ruby-dev libdevil-dev libboost-dev libboost-thread-dev libboost-regex-dev libboost-system-dev qt4-default</code></pre>
+<h2 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h2><pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> g++ <span class="token function">git</span> cmake libfreetype6-dev libode-dev libsdl-dev ruby ruby-dev libdevil-dev libboost-dev libboost-thread-dev libboost-regex-dev libboost-system-dev qt4-default</code></pre>
 
 <span id="more"></span>
 
@@ -32,26 +32,26 @@
 <blockquote>
 <p>若你在windows下解压，后可通过在wsl的终端中 <code>explorer.exe .</code> 打开wsl所在的目录，然后将你解压后的目录拖到 <code>home/your_name/</code> 下。</p>
 </blockquote>
-<h3 id="编译安装"><a href="#编译安装" class="headerlink" title="编译安装"></a>编译安装</h3><pre class="language-bash" data-language="bash"><code class="language-bash">#simspark
-cd simspark
-mkdir build
-cd build
-cmake ..
-make
-sudo make install
-sudo ldconfig</code></pre>
+<h3 id="编译安装"><a href="#编译安装" class="headerlink" title="编译安装"></a>编译安装</h3><pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token comment">#simspark</span>
+<span class="token builtin class-name">cd</span> simspark
+<span class="token function">mkdir</span> build
+<span class="token builtin class-name">cd</span> build
+cmake <span class="token punctuation">..</span>
+<span class="token function">make</span>
+<span class="token function">sudo</span> <span class="token function">make</span> <span class="token function">install</span>
+<span class="token function">sudo</span> ldconfig</code></pre>
 
-<pre class="language-bash" data-language="bash"><code class="language-bash">#rcsserver3d
-cd rcsserver3d
-mkdir build
-cd build
-cmake ..
-make
-sudo make install
-sudo ldconfig</code></pre>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token comment">#rcsserver3d</span>
+<span class="token builtin class-name">cd</span> rcsserver3d
+<span class="token function">mkdir</span> build
+<span class="token builtin class-name">cd</span> build
+cmake <span class="token punctuation">..</span>
+<span class="token function">make</span>
+<span class="token function">sudo</span> <span class="token function">make</span> <span class="token function">install</span>
+<span class="token function">sudo</span> ldconfig</code></pre>
 
-<pre class="language-bash" data-language="bash"><code class="language-bash">echo -e &#39;&#x2F;usr&#x2F;local&#x2F;lib&#x2F;simspark\n&#x2F;usr&#x2F;local&#x2F;lib&#x2F;rcssserver3d&#39; | sudo tee &#x2F;etc&#x2F;ld.so.conf.d&#x2F;spark.conf
-sudo ldconfig</code></pre>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">echo</span> -e <span class="token string">'/usr/local/lib/simspark<span class="token entity" title="\n">\n</span>/usr/local/lib/rcssserver3d'</span> <span class="token operator">|</span> <span class="token function">sudo</span> <span class="token function">tee</span> /etc/ld.so.conf.d/spark.conf
+<span class="token function">sudo</span> ldconfig</code></pre>
 
 <ul>
 <li>启动： <code>rcsoccersim3d</code></li>
@@ -70,23 +70,23 @@ sudo ldconfig</code></pre>
 <p>修改<code>roboviz.bat</code>内容为</p>
 <pre class="language-bash" data-language="bash"><code class="language-bash">@echo off
 
-if &quot;%1&quot; &#x3D;&#x3D; &quot;h&quot; goto begin
-mshta vbscript:createobject(&quot;wscript.shell&quot;).run(&quot;&quot;&quot;%~nx0&quot;&quot; h&quot;,0)(window.close)&amp;&amp;exit
+<span class="token keyword">if</span> <span class="token string">"%1"</span> <span class="token operator">==</span> <span class="token string">"h"</span> goto begin
+mshta vbscript:createobject<span class="token punctuation">(</span><span class="token string">"wscript.shell"</span><span class="token punctuation">)</span>.run<span class="token punctuation">(</span><span class="token string">""</span>"%~nx0<span class="token string">""</span> h<span class="token string">",0)(window.close)&amp;&amp;exit
 :begin
 REM
 
-set prev&#x3D;%cd%
-cd &#x2F;D &quot;%~dp0&quot;
+set prev=%cd%
+cd /D "</span>%~dp0"
 
 java -jar RoboViz.jar %*
 
-cd %prev%
+<span class="token builtin class-name">cd</span> %prev%
 </code></pre>
 
 <p>然后新增<code>robo.vbs</code>文件，内容为</p>
-<pre class="language-bash" data-language="bash"><code class="language-bash">Set shell &#x3D; Wscript.CreateObject(&quot;WScript.Shell&quot;)
+<pre class="language-bash" data-language="bash"><code class="language-bash">Set shell <span class="token operator">=</span> Wscript.CreateObject<span class="token punctuation">(</span><span class="token string">"WScript.Shell"</span><span class="token punctuation">)</span>
 
-a &#x3D; shell.run (&quot;E:\instruction\roboviz.bat&quot;,0)</code></pre>
+a <span class="token operator">=</span> shell.run <span class="token punctuation">(</span><span class="token string">"E:\instruction<span class="token entity" title="\r">\r</span>oboviz.bat"</span>,0<span class="token punctuation">)</span></code></pre>
 
 <blockquote>
 <p>注意<code>E:\instruction\roboviz.bat</code>是你的<code>roboviz.bat</code>地址，别搞错了。</p>
